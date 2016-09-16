@@ -10,6 +10,8 @@ train_nj=60
 decode_nj=20
 corpus=./corpus
 
+# Please check http://www.ru.nl/clst/datasets/ to get the username and password
+
 USERNAME=******
 PASSWORD=******
 
@@ -118,7 +120,7 @@ if [ $stage -le 7 ]; then
 fi
 
 if [ $stage -le 8 ]; then
-  echo "Starting DNN training and deccoding."
+  echo "Starting DNN training and decoding."
   local/nnet/run_dnn.sh || exit 1;
   local/nnet/run_dnn_fbank.sh || exit 1;
 fi
